@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<link rel="stylesheet" href="{% static '/main/css/style.css' %}">
+<script src="https://kit.fontawesome.com/a97047fead.js" crossorigin="anonymous"></script>
+
+    <aside>
+
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-5 d-none d-sm-inline">Меню</span>
+        </a>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <li class="nav-item">
+                <a href="{% url 'home' %}" {% if request.path == '' %} class="nav-link align-middle px-0" {% endif %}>
+                    <i class="fa-solid fa-house" style="color:blue;"></i> <span class="ms-1 d-none d-sm-inline">Домой</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href='news_list' {% if request.path == '/news_list/' %} class="nav-link align-middle px-0" {% endif %}>
+                    <i class="fa-regular fa-newspaper" style="color:blue;"></i> <span
+                    class="ms-1 d-none d-sm-inline">Новости</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+
+                <a href="#" class="nav-link align-middle px-0">
+                    <i class="fa-regular fa-registered" style="color:blue;"></i> <span class="ms-1 d-none d-sm-inline">Регистрация</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href='account/' {% if request.path == '/account/' %} class="nav-link align-middle px-0" {% endif %} >
+                    <i class="fa-solid fa-right-to-bracket" style="color:blue;"></i> <span class="ms-1 d-none d-sm-inline">Вход в аккаунт</span>
+                </a>
+            </li>
+        </ul>
+
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="background:#212529;">
+                    <img src="{% static 'main' %}/img/default.jpg" alt="" width="25" height="25" class="rounded-circle me-2">
+                    <div class="d-none d-lg-block">Демо-пользователь</div>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#"> Создать статью</a></li>
+                    <li><a class="dropdown-item" href="#"> Мой аккаунт</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#"> Выход</a></li>
+                </ul>
+            </div>
+    </aside>
+
+
+
